@@ -29,13 +29,9 @@ filtrarPorCategoria = (productos, categoria) => {
 
 
 sumarPrecios = (productos) => {
-  let total = 0;
 
-  for (let i = 0; i < productos.length; i++) {
-    total += productos[i].precio;
-  }
+  return productos.reduce( (total, producto) => total + producto.precio, 0 )
 
-  return total;
 };
 
 let listaProductos = addProductosPrompt();
